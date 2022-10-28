@@ -16,6 +16,7 @@ public class Quiz : MonoBehaviour
     void Start()
     {
         questionText.text = question.GetQuestion();
+        correctAnswerIndex = question.GetCorrectAnswerIndex();
 
         for (int i = 0; i < 4; i++)
         {
@@ -28,11 +29,17 @@ public class Quiz : MonoBehaviour
     public void OnAnswerSelected(int index)
     {
         // Correct
-        if (index == question.GetCorrectAnswerIndex())
+        if (index == correctAnswerIndex)
         {
             questionText.text = "Correct!";
             Image buttonImage = answers[index].GetComponent<Image>();
             buttonImage.sprite = correctSprite;
+        }
+        else
+        {
+            questionText.text = "Wrong! \nAnswer: " + question.GetAnswer(correctAnswerIndex);
+            Image buttonImage = answers[index].GetComponent<Image>();
+            buttonImage.sprite = defaultSprite;
         }
     }
 
