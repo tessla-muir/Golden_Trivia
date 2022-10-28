@@ -15,10 +15,16 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
+        DisplayQuestion();
+    }
+
+    // Displays question and answers for a question
+    void DisplayQuestion()
+    {
         questionText.text = question.GetQuestion();
         correctAnswerIndex = question.GetCorrectAnswerIndex();
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < answers.Length; i++)
         {
             TextMeshProUGUI buttonText = answers[i].GetComponentInChildren<TextMeshProUGUI>();
             buttonText.text = question.GetAnswer(i);
