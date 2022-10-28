@@ -7,8 +7,9 @@ using TMPro;
 public class Quiz : MonoBehaviour
 {
     [Header("Questions")]
-    [SerializeField] QuestionSO question;
+    [SerializeField] List<QuestionSO> questions = new List<QuestionSO>();
     [SerializeField] TextMeshProUGUI questionText;
+    QuestionSO currentQuestion;
 
     [Header("Answers")]
     [SerializeField] GameObject[] answers;
@@ -26,7 +27,6 @@ public class Quiz : MonoBehaviour
     void Start()
     {
         timer = FindObjectOfType<Timer>();
-        GetNextQuestion();
         DisplayQuestion();
     }
 
@@ -53,23 +53,42 @@ public class Quiz : MonoBehaviour
     void DisplayQuestion()
     {
         // Get and display question
-        questionText.text = question.GetQuestion();
-        correctAnswerIndex = question.GetCorrectAnswerIndex();
+        questionText.text = currentQuestion.GetQuestion();
+        correctAnswerIndex = currentQuestion.GetCorrectAnswerIndex();
 
         // Get and display answers
         for (int i = 0; i < answers.Length; i++)
         {
             TextMeshProUGUI buttonText = answers[i].GetComponentInChildren<TextMeshProUGUI>();
-            buttonText.text = question.GetAnswer(i);
+            buttonText.text = currentQuestion.GetAnswer(i);
         }
     }
 
     void GetNextQuestion()
     {
-        // Setup Buttons
-        ChangeButtonStates(true);
-        SetDefaultButtonSprites();
-        DisplayQuestion();
+        if (questions.Count > 0) 
+        {
+            // Setup
+            ChangeButtonStates(true);
+            SetDefaultButtonSprites();
+
+            // Pull random question from list
+            GetRandomQuestion();
+
+            // Display question
+            DisplayQuestion();
+        }
+    }
+
+    // Get a random question and remove it from the list
+    void GetRandomQuestion()
+    {
+        int index = Random.Range(0, questions.Count);
+        currentQuestion = questions[index];
+        if (questions.Contains(currentQuestion)) 
+        {
+            questions.Remove(currentQuestion);
+        }
     }
 
     void ChangeButtonStates(bool state)
@@ -111,7 +130,7 @@ public class Quiz : MonoBehaviour
         // Wrong
         else
         {
-            questionText.text = "Wrong! \nAnswer: " + question.GetAnswer(correctAnswerIndex);
+            questionText.text = "Wrong! \nAnswer: " + currentQuestion.GetAnswer(correctAnswerIndex);
             Image buttonImage = answers[index].GetComponent<Image>();
             buttonImage.sprite = defaultSprite;
         }
