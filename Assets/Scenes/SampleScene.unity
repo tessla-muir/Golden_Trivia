@@ -353,8 +353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fdb0609b55cce64d8e50f712a388cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToAnswer: 20
-  timeToReviewAnswer: 10
+  timeToAnswer: 10
+  timeToReviewAnswer: 5
   loadNextQuestion: 1
   isAnsweringQuestion: 0
   fillFraction: 0

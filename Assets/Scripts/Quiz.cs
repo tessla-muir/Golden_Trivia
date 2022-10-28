@@ -13,6 +13,7 @@ public class Quiz : MonoBehaviour
     [Header("Answers")]
     [SerializeField] GameObject[] answers;
     int correctAnswerIndex;
+    bool hasAnsweredEarly;
 
     [Header("Button Colors")]
     [SerializeField] Sprite defaultSprite;
@@ -32,6 +33,20 @@ public class Quiz : MonoBehaviour
     void Update() 
     {
         timerImage.fillAmount  = timer.fillFraction;
+        
+        // Load next question
+        if (timer.loadNextQuestion)
+        {
+            hasAnsweredEarly = false;
+            GetNextQuestion();
+            timer.loadNextQuestion = false;
+        }
+        // Out of time
+        else if (!hasAnsweredEarly && !timer.isAnsweringQuestion)
+        {
+            DisplayAnswer(-1);
+            ChangeButtonStates(false);
+        }
     }
 
     // Displays question and answers for a question
@@ -54,6 +69,7 @@ public class Quiz : MonoBehaviour
         // Setup Buttons
         ChangeButtonStates(true);
         SetDefaultButtonSprites();
+        DisplayQuestion();
     }
 
     void ChangeButtonStates(bool state)
@@ -77,7 +93,14 @@ public class Quiz : MonoBehaviour
     // Check to see if selected answer is correct
     public void OnAnswerSelected(int index)
     {
+        hasAnsweredEarly = true;
+        DisplayAnswer(index);
         ChangeButtonStates(false);
+        timer.CancelTimer();
+    } 
+
+    public void DisplayAnswer(int index)
+    {
         // Correct
         if (index == correctAnswerIndex)
         {
@@ -85,11 +108,12 @@ public class Quiz : MonoBehaviour
             Image buttonImage = answers[index].GetComponent<Image>();
             buttonImage.sprite = correctSprite;
         }
+        // Wrong
         else
         {
             questionText.text = "Wrong! \nAnswer: " + question.GetAnswer(correctAnswerIndex);
             Image buttonImage = answers[index].GetComponent<Image>();
             buttonImage.sprite = defaultSprite;
         }
-    } 
+    }
 }
