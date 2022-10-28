@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4663081650770948822}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Answer 1
+  m_text: Answer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec5e23637810aa344b54d81469706b13, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: ec5e23637810aa344b54d81469706b13, type: 2}
