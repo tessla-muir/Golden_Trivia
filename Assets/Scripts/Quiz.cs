@@ -31,6 +31,10 @@ public class Quiz : MonoBehaviour
     [Header("Progress Bar")]
     [SerializeField] Slider progressBar;
 
+    [Header("Sounds")]
+    [SerializeField] AudioSource correctSound;
+    [SerializeField] AudioSource wrongSound;
+
     public bool isComplete;
 
 
@@ -39,7 +43,7 @@ public class Quiz : MonoBehaviour
         timer = FindObjectOfType<Timer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
-    
+
     void Start()
     {
         progressBar.maxValue = questions.Count;
@@ -153,6 +157,7 @@ public class Quiz : MonoBehaviour
             questionText.text = "Correct!";
             Image buttonImage = answers[index].GetComponent<Image>();
             buttonImage.sprite = correctSprite;
+            correctSound.Play();
             scoreKeeper.IncrementCorrectQuestions();
         }
         // Wrong
@@ -161,6 +166,7 @@ public class Quiz : MonoBehaviour
             questionText.text = "Wrong! \nAnswer: " + currentQuestion.GetAnswer(correctAnswerIndex);
             Image buttonImage = answers[index].GetComponent<Image>();
             buttonImage.sprite = defaultSprite;
+            wrongSound.Play();
         }
         scoreKeeper.IncrementTotalQuestions();
     }
