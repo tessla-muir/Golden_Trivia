@@ -7,7 +7,7 @@ using TMPro;
 public class Quiz : MonoBehaviour
 {
     [Header("Questions")]
-    [SerializeField] List<QuestionSO> questions = new List<QuestionSO>();
+    public List<QuestionSO> questions = new List<QuestionSO>();
     [SerializeField] TextMeshProUGUI questionText;
     QuestionSO currentQuestion;
 
