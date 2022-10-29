@@ -163,10 +163,8 @@ public class Quiz : MonoBehaviour
         // Wrong
         else
         {
-            questionText.text = "Wrong! \nAnswer: " + currentQuestion.GetAnswer(correctAnswerIndex);
-            Image buttonImage = answers[index].GetComponent<Image>();
-            buttonImage.sprite = defaultSprite;
             wrongSound.Play();
+            questionText.text = "Wrong!\nAnswer: " + currentQuestion.GetAnswer(correctAnswerIndex);
         }
         scoreKeeper.IncrementTotalQuestions();
     }
