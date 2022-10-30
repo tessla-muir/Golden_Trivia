@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class CategoryManager : MonoBehaviour
 {
     static public int category;
+    [SerializeField] AudioSource startMusic;
+
+    void Awake()
+    {
+        startMusic.Play();
+    }
 
     // Loads quiz scene
     public void LoadQuiz(int index)
