@@ -30,7 +30,7 @@ public class EndScreen : MonoBehaviour
         }
         else if (finalScore >= 50)
         {
-            finalScoreText.text = "Bea proud!\n Final Score: " + finalScore + "%";
+            finalScoreText.text = "At least you passed...\n Final Score: " + finalScore + "%";
         }
         else
         {

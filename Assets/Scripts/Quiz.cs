@@ -108,6 +108,8 @@ public class Quiz : MonoBehaviour
 
             // Increment progress bar
             progressBar.value++;
+
+            scoreKeeper.IncrementTotalQuestions();
         }
     }
 
@@ -152,11 +154,12 @@ public class Quiz : MonoBehaviour
 
     public void DisplayAnswer(int index)
     {
+        Image buttonImage;
         // Correct
         if (index == correctAnswerIndex)
         {
             questionText.text = "Correct!";
-            Image buttonImage = answers[index].GetComponent<Image>();
+            buttonImage = answers[index].GetComponent<Image>();
             buttonImage.sprite = correctSprite;
             correctSound.Play();
             scoreKeeper.IncrementCorrectQuestions();
@@ -166,8 +169,9 @@ public class Quiz : MonoBehaviour
         {
             wrongSound.Play();
             questionText.text = "Wrong!\nAnswer: " + currentQuestion.GetAnswer(correctAnswerIndex);
+            buttonImage = answers[correctAnswerIndex].GetComponent<Image>();
+            buttonImage.sprite = correctSprite;
         }
-        scoreKeeper.IncrementTotalQuestions();
     }
 
     // Changes questions depending on category

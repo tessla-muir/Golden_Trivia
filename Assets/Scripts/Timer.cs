@@ -24,26 +24,32 @@ public class Timer : MonoBehaviour
 
     void UpdateTimer()
     {
-        // Reduce time
         timerValue -= Time.deltaTime;
 
-        // Not answering question
-        if (timerValue <= 0 && !isAnsweringQuestion)
+        if(isAnsweringQuestion)
         {
-            timerValue = timeToAnswer;
-            isAnsweringQuestion = true;
-            loadNextQuestion = true;
+            if(timerValue > 0)
+            {
+                fillFraction = timerValue / timeToAnswer;
+            }
+            else
+            {
+                isAnsweringQuestion = false;
+                timerValue = timeToReviewAnswer;
+            }
         }
-        // Answering a question
-        else if (timerValue <= 0 && isAnsweringQuestion)
-        {
-            timerValue = timeToReviewAnswer;
-            isAnsweringQuestion = false;
-        }
-        // Update timer
         else
         {
-            UpdateTimerFraction();
+            if(timerValue > 0)
+            {
+                fillFraction = timerValue / timeToReviewAnswer;
+            }
+            else
+            {
+                isAnsweringQuestion = true;
+                timerValue = timeToAnswer;
+                loadNextQuestion = true;
+            }
         }
     }
 
