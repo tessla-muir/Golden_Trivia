@@ -155,6 +155,10 @@ PrefabInstance:
       value: CategoryManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1059,6 +1063,10 @@ PrefabInstance:
       value: CategoryManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1201,6 +1209,10 @@ PrefabInstance:
       value: CategoryManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1341,6 +1353,10 @@ PrefabInstance:
     - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CategoryManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1753,6 +1769,10 @@ PrefabInstance:
     - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CategoryManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4663081650770948820, guid: a9ee033e0476d334e8c43ff1f92163b9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a93520d0048ba74dbf1343dbbe4be30, type: 3}
-  m_Name: Question 4
+  m_Name: Question 7
   m_EditorClassIdentifier: 
-  question: Who's house did the Golden Girls live in?
+  question: Who got married in the last episode, moving out of the house?
   answers:
   - Blanche
-  - Dorothy
-  - Sophia
   - Rose
-  correctAnswer: 0
+  - Sophia
+  - Dorothy
+  correctAnswer: 3

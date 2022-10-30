@@ -1537,12 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ed3c360f14e764da4ba139ae95762e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions:
-  - {fileID: 11400000, guid: 12e1b03eb016c944db422d683fd71f09, type: 2}
-  - {fileID: 11400000, guid: 4d561ca0206d85f48bcec469d650b55a, type: 2}
-  - {fileID: 11400000, guid: 1e97d8beca26cea44bbcebe0b3bec8fd, type: 2}
-  - {fileID: 11400000, guid: 7d349b6b15a123441a07af6b1f0b468c, type: 2}
-  - {fileID: 11400000, guid: e3486cab40efcf54cb3d7787d23d7016, type: 2}
+  questions: []
   questionText: {fileID: 1875844635}
   answers:
   - {fileID: 891018237}

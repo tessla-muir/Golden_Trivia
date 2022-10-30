@@ -42,6 +42,7 @@ public class Quiz : MonoBehaviour
     {
         timer = FindObjectOfType<Timer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        ChangeQuestions(CategoryManager.category);
     }
 
     void Start()
@@ -167,5 +168,49 @@ public class Quiz : MonoBehaviour
             questionText.text = "Wrong!\nAnswer: " + currentQuestion.GetAnswer(correctAnswerIndex);
         }
         scoreKeeper.IncrementTotalQuestions();
+    }
+
+    // Changes questions depending on category
+    void ChangeQuestions(int category)
+    {
+        string path = "";
+
+        if (CategoryManager.category == 0)
+        {
+            path = "Questions/Easy";
+        }
+        else if (CategoryManager.category == 1)
+        {
+            path = "Questions/Medium";
+        }
+        else if (CategoryManager.category == 2)
+        {
+            path = "Questions/Hard";
+        }
+        else if (CategoryManager.category == 3)
+        {
+            path = "Questions/Fanatic";
+        }
+        else if (CategoryManager.category == 4)
+        {
+            path = "Questions/Actors";
+        }
+        else if (CategoryManager.category == 5)
+        {
+            path = "Questions/Show";
+        }
+        else
+        {
+            Debug.Log("Error on category selection");
+        }
+
+        // Get questions from respective folder
+        Object[] categoryQuestions = Resources.LoadAll(path);
+
+        // Add newly loaded questions into quiz question list
+        for (int i = 0; i < categoryQuestions.Length; i++)
+        {
+            questions.Add((QuestionSO)categoryQuestions[i]);
+        }
     }
 }

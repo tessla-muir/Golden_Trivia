@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a93520d0048ba74dbf1343dbbe4be30, type: 3}
-  m_Name: Question 4
+  m_Name: Question 6
   m_EditorClassIdentifier: 
-  question: Which 'Golden Girl' wore clip-on earrings?
+  question: What episode was an autobiography for Susan Harris?
   answers:
-  - Rue
-  - Estelle
-  - Betty
-  - Bea
-  correctAnswer: 3
+  - Not Another Monday
+  - Room Seven
+  - Sick & Tired
+  - My Brother, My Father
+  correctAnswer: 2
