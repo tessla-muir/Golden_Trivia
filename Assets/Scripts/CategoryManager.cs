@@ -19,4 +19,13 @@ public class CategoryManager : MonoBehaviour
         category = index;
         SceneManager.LoadScene("QuizScene");
     }
+
+    public void QuitGame(bool quit) 
+    {
+        if (quit)
+        {
+            Debug.Log("Exiting Game");
+            Application.Quit();
+        }
+    }
 }
